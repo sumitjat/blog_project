@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title_block %}
+Sumit Blog
+{% endblock %}
+
+{% block content %}
+    <h1>Sumit Blogs</h1>
+    {% if tag %}
+    <h2> Post Tagged with {{ tag.name }}</h2>
+    {% endif %}
+    {% for post in post_list %}
+     <a href="{{ post.get_absolute_url }}"><h2> {{ post.title }}</h2> </a>
+       <p id="date">Published on {{ post.publish }} by {{ post.author | title }}</p>
+{#        Tags: {{ post.tags.all | join:',' }}#}
+        <p>Tags :
+        {% for tag in post.tags.all %}
+
+            <a href="{% url 'post_list_tag' tag.slug %}"> {{ tag.name }}</a>
+
+            {% endfor %}
+        {{ post.body | truncatewords:15 | linebreaks }}
+    {% endfor %}
+
+    {% include 'pagination.html' with page=post_list %}
+{% endblock %}

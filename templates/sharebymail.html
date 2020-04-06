@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title_block %} SHare Post {{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    {% if sent %}
+        <h2>EMail is Send Successfully </h2>
+        {% else %}
+            <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+        <button type="submit">Click on this</button>
+        </form>
+    {% endif %}
+{% endblock %}

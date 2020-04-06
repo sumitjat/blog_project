@@ -1,0 +1,33 @@
+.content
+{
+    width: 60%;
+    float: left;
+    padding: 0 0 0 30px;
+    background: darkorange;
+}
+.sidebar
+{
+    width:40%;
+    float: right;
+    padding: 5px;
+    background: sienna;
+    height: 100%;
+}
+h1
+{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+
+}
+body
+{
+    color: white;
+}
+
+#date
+{
+    color: aqua;
+    font-size:13px ;
+    font-family: "Arial Black";
+}
